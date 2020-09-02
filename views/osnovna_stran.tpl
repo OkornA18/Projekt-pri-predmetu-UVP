@@ -1,4 +1,4 @@
-% rebase("Projekt-pri-predmetu-UVP-master/views/base.tpl")
+% rebase("views/base.tpl")
 
 <div align="center" class="dom">
 <h4>

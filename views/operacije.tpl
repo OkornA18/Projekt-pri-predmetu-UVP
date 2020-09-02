@@ -1,4 +1,4 @@
-% rebase("Projekt-pri-predmetu-UVP-master/views/base.tpl")
+% rebase("views/base.tpl")
 
 <form action={{ operacija }} method="POST">
   <div class="form-group">

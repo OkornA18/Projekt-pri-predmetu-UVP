@@ -13,11 +13,11 @@ def prepoznaj_matriko(matrika):
 
 @bottle.get("/")
 def osnovna_stran():
-    return bottle.template("Projekt-pri-predmetu-UVP-master/views/osnovna_stran.tpl")
+    return bottle.template("views/osnovna_stran.tpl")
 
 @bottle.get("/sestevanje")
 def sestevanje():
-    return bottle.template("Projekt-pri-predmetu-UVP-master/views/operacije.tpl", operacija="/sestej", operator="+", operiraj="SEŠTEJ")
+    return bottle.template("views/operacije.tpl", operacija="/sestej", operator="+", operiraj="SEŠTEJ")
 
 @bottle.post("/sestej")
 def sestej():
@@ -26,11 +26,11 @@ def sestej():
     matrika1 = prepoznaj_matriko(matrika1_besedilo)
     matrika2 = prepoznaj_matriko(matrika2_besedilo)
     vsota = matrika1 + matrika2
-    return bottle.template("Projekt-pri-predmetu-UVP-master/views/rezultat.tpl", rezultat=vsota)
+    return bottle.template("views/rezultat.tpl", rezultat=vsota)
 
 @bottle.get("/odstevanje")
 def odstevanje():
-    return bottle.template("Projekt-pri-predmetu-UVP-master/views/operacije.tpl", operacija="/odstej", operator="-", operiraj="ODŠTEJ")
+    return bottle.template("views/operacije.tpl", operacija="/odstej", operator="-", operiraj="ODŠTEJ")
 
 @bottle.post("/odstej")
 def odstej():
@@ -39,11 +39,11 @@ def odstej():
     matrika1 = prepoznaj_matriko(matrika1_besedilo)
     matrika2 = prepoznaj_matriko(matrika2_besedilo)
     vsota = matrika1 - matrika2
-    return bottle.template("Projekt-pri-predmetu-UVP-master/views/rezultat.tpl", rezultat=vsota)
+    return bottle.template("views/rezultat.tpl", rezultat=vsota)
 
 @bottle.get("/mnozenje")
 def mnozenje():
-    return bottle.template("Projekt-pri-predmetu-UVP-master/views/operacije.tpl", operacija="/zmnozi", operator="*", operiraj="POMNOŽI")
+    return bottle.template("views/operacije.tpl", operacija="/zmnozi", operator="*", operiraj="POMNOŽI")
 
 @bottle.post("/zmnozi")
 def zmnozi():
