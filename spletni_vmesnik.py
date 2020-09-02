@@ -52,7 +52,7 @@ def zmnozi():
     matrika1 = prepoznaj_matriko(matrika1_besedilo)
     matrika2 = prepoznaj_matriko(matrika2_besedilo)
     zmnozek = matrika1 * matrika2
-    return bottle.template("Projekt-pri-predmetu-UVP-master/views/rezultat.tpl", rezultat=zmnozek)
+    return bottle.template("views/rezultat.tpl", rezultat=zmnozek)
 
 
 bottle.run(reloader=True, debug=True)
