@@ -1,4 +1,3 @@
-
 class Matrika:
 
     def __init__(self, matrika):
@@ -25,10 +24,10 @@ class Matrika:
         self.matrika[indeks] = item
 
     def __add__(self, other):
-        """ Sešteje matriki po komponentah. """
+        """ Ta funkcija sešteje kvadratni matriki po komponentah. """
 
         if  self.vrstice != self.stolpci or other.vrstice != other.stolpci:
-            raise Exception("Si prepričan, da so vpisane matrike kvadratne?")
+            raise Exception("Si prepričan, da sta vpisani matriki kvadratni?")
 
         elif self.vrstice != other.vrstice or self.stolpci != other.stolpci:
             raise Exception("Matriki sta različnih velikosti!")
@@ -47,8 +46,20 @@ class Matrika:
     def __sub__(self, other):
         return self + (-1) * other
 
+    def transponiraj(self):
+        """Ta funkcija mi transponira drugo matriko pri množenju"""
+        m = self.vrstice
+        n = self.stolpci
+        novamatrika = []
+        for i in range(n):
+            vrstica = []
+            for j in range(m):
+                vrstica.append(self[j][i])
+            novamatrika.append(vrstica)
+        return Matrika(novamatrika)
+
     def __mul__(self, other):
-        """ Pomnoži dano matriko z s skalarjem ali pa z drugo matriko. """
+        """ Ta funkcija mi bo pomnožila dve kvadratni matriki """
 
         if  self.vrstice != self.stolpci or other.vrstice != other.stolpci:
             raise Exception("Si prepričan, da so vpisane matrike kvadratne?")
@@ -58,20 +69,21 @@ class Matrika:
 
         elif isinstance(other, Matrika):
             if self.stolpci == other.vrstice:
-                trans = other.transponiraj() 
+                transponiranka = other.transponiraj() 
                 zmnozek = []
                 m = self.vrstice
                 n = self.stolpci
                 for i in range(m):
                     vrstica = []
                     for j in range(n):
-                        vrstica.append(sum([item[0] * item[1] for item in zip(self.matrika[i], trans.matrika[j])]))
+                        vrstica.append(sum([item[0] * item[1] for item in zip(self.matrika[i], transponiranka.matrika[j])]))
                     zmnozek.append(vrstica)
                 return Matrika(zmnozek)
         else:
             raise Exception("Si prepričan da so velikosti/tipi pravilni?")
     
     def __rmul__(self, other):
+        """Ta funkcija pri mojem odštevanju pomnoži drugo matriko, torej to, ki jo odštevam, s skalarjem -1"""
         if isinstance(other, int) or isinstance(other, float):
             zmnozek = []
             m = self.vrstice
@@ -82,14 +94,3 @@ class Matrika:
                     vrstica.append(self[i][j] * other)
                 zmnozek.append(vrstica)
             return Matrika(zmnozek)
-
-    def transponiraj(self):
-        m = self.vrstice
-        n = self.stolpci
-        transponiranka = []
-        for i in range(n):
-            vrstica = []
-            for j in range(m):
-                vrstica.append(self[j][i])
-            transponiranka.append(vrstica)
-        return Matrika(transponiranka)
