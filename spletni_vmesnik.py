@@ -1,7 +1,7 @@
 import bottle
 from model import Matrika
 
-def prepoznaj_matriko(matrika):
+def matrika_v_pravi_obliki(matrika):
 
     matrika = matrika.split("\n")
     matrika1 = []
@@ -11,7 +11,7 @@ def prepoznaj_matriko(matrika):
         matrika1.append(vrstica)
     return Matrika(matrika1)
 
-@bottle.get("/")
+@bottle.get("/") 
 def osnovna_stran():
     return bottle.template("views/osnovna_stran.tpl")
 
@@ -23,8 +23,8 @@ def sestevanje():
 def sestej():
     matrika1_besedilo = bottle.request.forms["matrika1"]
     matrika2_besedilo = bottle.request.forms["matrika2"]
-    matrika1 = prepoznaj_matriko(matrika1_besedilo)
-    matrika2 = prepoznaj_matriko(matrika2_besedilo)
+    matrika1 = matrika_v_pravi_obliki(matrika1_besedilo)
+    matrika2 = matrika_v_pravi_obliki(matrika2_besedilo)
     vsota = matrika1 + matrika2
     return bottle.template("views/rezultat.tpl", rezultat=vsota)
 
@@ -36,8 +36,8 @@ def odstevanje():
 def odstej():
     matrika1_besedilo = bottle.request.forms["matrika1"]
     matrika2_besedilo = bottle.request.forms["matrika2"]
-    matrika1 = prepoznaj_matriko(matrika1_besedilo)
-    matrika2 = prepoznaj_matriko(matrika2_besedilo)
+    matrika1 = matrika_v_pravi_obliki(matrika1_besedilo)
+    matrika2 = matrika_v_pravi_obliki(matrika2_besedilo)
     vsota = matrika1 - matrika2
     return bottle.template("views/rezultat.tpl", rezultat=vsota)
 
@@ -49,8 +49,8 @@ def mnozenje():
 def zmnozi():
     matrika1_besedilo = bottle.request.forms["matrika1"]
     matrika2_besedilo = bottle.request.forms["matrika2"]
-    matrika1 = prepoznaj_matriko(matrika1_besedilo)
-    matrika2 = prepoznaj_matriko(matrika2_besedilo)
+    matrika1 = matrika_v_pravi_obliki(matrika1_besedilo)
+    matrika2 = matrika_v_pravi_obliki(matrika2_besedilo)
     zmnozek = matrika1 * matrika2
     return bottle.template("views/rezultat.tpl", rezultat=zmnozek)
 
