@@ -94,3 +94,11 @@ class Matrika:
                     vrstica.append(self[i][j] * other)
                 zmnozek.append(vrstica)
             return Matrika(zmnozek)
+
+    def sled(self):
+        """ Izračuna vsoto diagonalnih elementov le kvadratnim matrikam. """
+        
+            sled = 0
+            for i in range(self.vrstice):
+                sled += self[i][i]
+            return sled
