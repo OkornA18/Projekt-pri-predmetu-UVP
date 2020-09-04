@@ -1,4 +1,4 @@
-% rebase(""views/base.tpl"")
+% rebase("views/base.tpl")
 
 <form action={{ potek }} method="POST">
   <div class="form-group">

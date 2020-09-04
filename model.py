@@ -97,7 +97,7 @@ class Matrika:
 
     def sled(self):
         """ Izračuna vsoto diagonalnih elementov le kvadratnim matrikam. """
-        if not self.vrstice != self.stolpci:
+        if not self.vrstice == self.stolpci:
             raise Exception("Sled računamo le kvadratnim matrikam, zato preveri, ali si vpisal kvadratno matriko.")
         else:
             sled = 0
