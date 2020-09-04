@@ -3,7 +3,7 @@
 <div align="center" class="dom">
 <h4>
 <p>
-Zdravo! Imaš težave s seštevanjem, odštevanjem in množenjem enako velikih kvadratnih matrik, torej matrik ki imajo enako število stolpcev in vrstic? Potem bo ta program kot nalašč zate. Program ti bo pomagal pri osnovnih operacijah računanja s kvadratnimi matrikami, s katerimi se matematik sreča pri linearni 
+Zdravo! Imaš težave s seštevanjem, odštevanjem in množenjem enako velikih kvadratnih matrik, torej matrik ki imajo enako število stolpcev in vrstic? Te zanima tudi sled in determinanta kvadratne matrike? Potem bo ta program kot nalašč zate. Program ti bo pomagal pri osnovnih operacijah računanja s kvadratnimi matrikami, s katerimi se matematik sreča pri 
 algebri in drugih predmetih.
 </p>
 <p>

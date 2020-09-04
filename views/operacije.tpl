@@ -24,7 +24,7 @@
     </td>
   </tr>
   <tr>
-    <input type="submit" value={{ operiraj }}!>
+    <input type="submit" value={{ operiraj }}>
   </tr>
   </table>  
   </div>
