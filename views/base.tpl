@@ -18,7 +18,8 @@
   <a href="/sestevanje" class="btn btn-secondary">seštevanje matrik</a>       
   <a href="/odstevanje" class="btn btn-secondary">odštevanje matrik</a> 
   <a href="/mnozenje" class="btn btn-secondary">zmnožek matrik</a> 
-  <a href="/sledenje" class="btn btn-secondary">sledi</a> 
+  <a href="/sledenje" class="btn btn-secondary">sled</a> 
+  <a href="/determiniranje" class="btn btn-secondary">determinanta</a>
   </div>
 </div>
 </div>
