@@ -54,5 +54,15 @@ def zmnozi():
     zmnozek = matrika1 * matrika2
     return bottle.template("views/rezultat.tpl", rezultat=zmnozek)
 
+@bottle.get("/sledenje")
+def sledenje():
+    return bottle.template("matrika.tpl", potek="/sled", kar_racunam="SLED")
+
+@bottle.post("/sled")
+def sled():
+    matrika_besedilo = bottle.request.forms["matrika"]
+    matrika = matrika_v_pravi_obliki(matrika_besedilo)
+    sled = matrika.sled()
+    return bottle.template("potek.tpl", rezultat=sled)
 
 bottle.run(reloader=True, debug=True)
