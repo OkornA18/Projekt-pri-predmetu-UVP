@@ -106,6 +106,11 @@ class Matrika:
             return sled
 
     def determinanta(self):
+        if self.vrstice == 1:
+            return self[0][0]
+        elif self.vrstice == 2:
+            return self[0][0] * self[1][1] - self[0][1] * self[1][0]
+        else:
             A = self
             končna_determinanta = 0
             indeksi = list(range(A.vrstice))
