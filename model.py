@@ -106,7 +106,9 @@ class Matrika:
             return sled
 
     def determinanta(self):
-        if self.vrstice == 1:
+        if not self.vrstice == self.stolpci:
+            raise Exception("Determinanto računamo le kvadratnim matrikam, zato preveri, ali si vpisal kvadratno matriko.")
+        elif self.vrstice == 1:
             return self[0][0]
         elif self.vrstice == 2:
             return self[0][0] * self[1][1] - self[0][1] * self[1][0]
