@@ -104,3 +104,19 @@ class Matrika:
             for i in range(self.vrstice):
                 sled += self[i][i]
             return sled
+
+    def determinanta(self):
+            A = self
+            končna_determinanta = 0
+            indeksi = list(range(A.vrstice))
+            for stolpci in indeksi:
+                A2 = A 
+                A2 = A2[1:]
+                visina = len(A2)
+                for i in range(visina): 
+                    A2[i] = A2[i][0:stolpci] + A2[i][stolpci+1:] 
+                sign = (-1) ** (stolpci % 2)
+                A2 = Matrika(A2)
+                sub_det = A2.determinanta()
+                končna_determinanta += sign * A[0][stolpci] * sub_det 
+            return končna_determinanta
