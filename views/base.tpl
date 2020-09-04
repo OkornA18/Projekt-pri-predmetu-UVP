@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title align="center">ENOSTAVNI RAČUNALNIK KVADRATNIH MATRIK</title>
+    <title align="center">RAČUNALNIK KVADRATNIH MATRIK</title>
  
 </head>
     <body>
 <div class="container">
 
 <div align="center" style="width: 700px;">
-  <h1><a href="/" style="color: #FF83FA;"><b>ENOSTAVNI RAČUNALNIK KVADRATNIH MATRIK</b></a></h1>
+  <h1><a href="/" style="color: #FF83FA;"><b>RAČUNALNIK KVADRATNIH MATRIK</b></a></h1>
   </div>
 
 <div align="center">
