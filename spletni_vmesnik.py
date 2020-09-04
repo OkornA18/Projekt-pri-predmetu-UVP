@@ -65,4 +65,15 @@ def sled():
     sled = matrika.sled()
     return bottle.template("views/potek.tpl", rezultat=sled)
 
+@bottle.get("/determiniranje")
+def determiniranje():
+    return bottle.template("views/matrika.tpl", potek="/determinanta", kar_racunam="DETERMINANTA")
+
+@bottle.post("/determinanta")
+def determinanta():
+    matrika_besedilo = bottle.request.forms["matrika"]
+    matrika = matrika_v_pravi_obliki(matrika_besedilo)
+    determinanta = matrika.determinanta()
+    return bottle.template("views/potek.tpl", rezultat=determinanta)
+
 bottle.run(reloader=True, debug=True)
